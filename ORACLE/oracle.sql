@@ -199,3 +199,5 @@ INSERT INTO Goles VALUES(9,'BBB2',111,72,'Gol de Rakitic','Remate');
 INSERT INTO Goles VALUES(10,'BBB2',122,38,'Gol de Oyarzabal','Falta');
 INSERT INTO Goles VALUES(11,'BBB3',116,81,'Gol de Dembele','Remate');
 INSERT INTO Goles VALUES(12,'BBB3',116,17,'Gol de Dembele','Remate');
+
+COMMIT;
