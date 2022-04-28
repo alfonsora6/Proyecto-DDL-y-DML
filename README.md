@@ -54,6 +54,7 @@
 
 
 
+
 ### UNA VEZ CREADAS LAS TABLAS CONSIDERA LAS SIGUIENTES RESTRICCIONES:
 
 1. Modifica la tabla partidos: Clima por defecto **"Despejado"**.
