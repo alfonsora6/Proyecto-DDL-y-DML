@@ -57,7 +57,7 @@
 
 1. Modifica la tabla partidos: Clima por defecto **"Despejado"**.
 
-2. Tabla Goles: Añadir columna llamada **"Tipo"** de tipo **VARCHAR2(20)**
+2. Tabla Goles: Añadir columna llamada **"Tipo"** de tipo **VARCHAR2** con tamaño 20.
 
 3. Elimina la columna **FechaNac** de la tabla Presidente.
 
