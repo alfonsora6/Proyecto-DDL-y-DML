@@ -51,3 +51,30 @@
 |  			***CodJugador*** 		 |  			Numérico 			hasta 999 		              |  			   			 		                             |
 |  			Minuto 		           |  			Numérico, 			tamaño 3 		              |  			El 			minuto debe ser menor de 120 		 |
 |  			Descripción 		      |  			Cadena 			de Caracteres, tamaño 30 		 |  			   			 		                             |
+
+
+### UNA VEZ CREADAS LAS TABLAS CONSIDERA LAS SIGUIENTES RESTRICCIONES:
+
+1. Modifica la tabla partidos: Clima por defecto **"Despejado"**.
+
+2. Tabla Goles: Añadir columna llamada **"Tipo"** de tipo **VARCHAR(20)**
+
+3. Elimina la columna **FechaNac** de la tabla Presidente.
+
+4. Eliminar la restricción de Clima obligatorio **('Despejado','Lluvioso','Nublado')**.
+
+5. Tabla Goles: La columna **"Tipo"** solo podrá ser **"Remate, Penalti, Falta o Autogol"**.
+
+6. Tabla Partidos: Actualizar la restricción de **FechaEncuentro**, el año deberá estar entre 2010 y 2000.
+
+7. Tabla Jugadores: El **dorsal** solo podrá ser del 1 al 50.
+
+8. Tabla Jugadores: Desactiva temporalmente la restricción del dorsal.
+
+9. Tabla Jugadores: Activa la restricción del dorsal.
+
+10. La **fundación** de los equipos debe de ser desde 1890.
+
+11. Tabla Equipos: La **ciudad** debe empezar por mayúsculas.
+
+12. La **posición** de los jugadores debe tener mas de 1 carácter.
