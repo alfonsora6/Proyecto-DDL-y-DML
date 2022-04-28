@@ -5,7 +5,7 @@
 |  			**EQUIPOS** 		 |                                   |                     |
 |---------------|-----------------------------------|---------------------|
 |  			**Nombre** 		  |  			Cadena 			de Carácteres, tamaño 20 		 |  			   			 		               |
-|  			Estadio 		     |  			Cadena 			de Carácteres, tamaño 20 		 |  			Único 		             |
+|  			Estadio 		     |  			Cadena 			de Carácteres, tamaño 30 		 |  			Único 		             |
 |  			Aforo 		       |  			Numérico 			hasta 999.999 		          |  			Menor 			que 150.000 		 |
 |  			Fundación 		   |  			Fecha 		                           |  			   			 		               |
 |  			Ciudad 		      |  			Cadena 			de Carácteres, tamaño 20 		 |  			No 			nulo 		           |
@@ -18,8 +18,8 @@
 |  			FechaEncuentro 		              |  			Fecha 		                           |  			El 			año debe de estar entre 2000 y 2020 		 |
 |  			Jornada 		                     |  			Cadena 			de Caracteres, tamaño 20 		 |  			‘Jornada 1’ o ‘Jornada 			2’ 		              |
 |  			Clima 		                       |  			Cadena 			de Caracteres, tamaño 20 		 |  			‘Despejado’ 			o ‘Lluvioso’ o ‘Nublado’ 		   |
-|  			***NombreEquipoLocal*** 		     |  			Cadena 			de Carácteres, tamaño 20 		 |  			   			 		                                    |
-|  			***NombreEquipoVisitante*** 		 |  			Cadena 			de Carácteres, tamaño 20 		 |  			   			 		                                    |
+|  			***EquipoLocal*** 		     |  			Cadena 			de Carácteres, tamaño 20 		 |  			   			 		                                    |
+|  			***EquipoVisitante*** 		 |  			Cadena 			de Carácteres, tamaño 20 		 |  			   			 		                                    |
 
 ### Tabla Jugadores
 
