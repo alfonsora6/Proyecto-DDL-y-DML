@@ -120,7 +120,7 @@ ALTER TABLE Partidos ADD CONSTRAINT ck_fechaencuentro CHECK(EXTRACT(YEAR FROM Fe
 ALTER TABLE Jugadores ADD CONSTRAINT ck_dorsal CHECK(Dorsal>=1 and Dorsal<=50);
 
 --8. Tabla Jugadores: Desactiva temporalmente la restricción del dorsal.
---La función NOCHECK no funciona.
+--La restricción NOCHECK no funciona.
 
 ALTER TABLE Jugadores DISABLE KEYS;
 
