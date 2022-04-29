@@ -1,5 +1,4 @@
 --CREACIÓN DE BASE DE DATOS Y USUARIO CON PRIVILEGIOS
-
 --Iniciamos sesión con el usuario postgres
 
 su - postgres
@@ -12,7 +11,7 @@ GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO alfonso;
 GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO alfonso;
 exit
 
---Ahora iniciamos sesión en el sistema con nuestro usuario (alfonso) accedemos a la base de datos mediante el intérprete psql;
+--Ahora iniciamos sesión en el sistema con nuestro usuario (alfonso) y accedemos a la base de datos mediante el intérprete psql;
 
 psql -U alfonso liga
 
