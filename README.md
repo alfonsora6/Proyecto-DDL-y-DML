@@ -78,7 +78,7 @@
 - Tabla Equipos: La **ciudad** debe empezar por mayúsculas.
 
 - La **posición** de los jugadores debe tener mas de 1 carácter.
-
+  
 ## CONSULTAS
 
 - Consulta sencilla
