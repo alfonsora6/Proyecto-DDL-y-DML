@@ -55,26 +55,65 @@
 
 ### UNA VEZ CREADAS LAS TABLAS CONSIDERA LAS SIGUIENTES RESTRICCIONES:
 
-1. Modifica la tabla partidos: Clima por defecto **"Despejado"**.
+- Modifica la tabla partidos: Clima por defecto **"Despejado"**.
 
-2. Tabla Goles: Añadir columna llamada **"Tipo"** de tipo **VARCHAR2** con tamaño 20.
+- Tabla Goles: Añadir columna llamada **"Tipo"** de tipo **VARCHAR2** con tamaño 20.
 
-3. Elimina la columna **FechaNac** de la tabla Presidente.
+- Elimina la columna **FechaNac** de la tabla Presidente.
 
-4. Eliminar la restricción de Clima obligatorio **('Despejado','Lluvioso','Nublado')**.
+- Eliminar la restricción de Clima obligatorio **('Despejado','Lluvioso','Nublado')**.
 
-5. Tabla Goles: La columna **"Tipo"** solo podrá ser **"Remate, Penalti, Falta o Autogol"**.
+- Tabla Goles: La columna **"Tipo"** solo podrá ser **"Remate, Penalti, Falta o Autogol"**.
 
-6. Tabla Partidos: Actualizar la restricción de **FechaEncuentro**, el año deberá estar entre 2010 y 2000.
+- Tabla Partidos: Actualizar la restricción de **FechaEncuentro**, el año deberá estar entre 2010 y 2000.
 
-7. Tabla Jugadores: El **dorsal** solo podrá ser del 1 al 50.
+- Tabla Jugadores: El **dorsal** solo podrá ser del 1 al 50.
 
-8. Tabla Jugadores: Desactiva temporalmente la restricción del dorsal.
+- Tabla Jugadores: Desactiva temporalmente la restricción del dorsal.
 
-9. Tabla Jugadores: Activa la restricción del dorsal.
+- Tabla Jugadores: Activa la restricción del dorsal.
 
-10. La **fundación** de los equipos debe de ser desde 1890.
+- La **fundación** de los equipos debe de ser desde 1890.
 
-11. Tabla Equipos: La **ciudad** debe empezar por mayúsculas.
+- Tabla Equipos: La **ciudad** debe empezar por mayúsculas.
 
-12. La **posición** de los jugadores debe tener mas de 1 carácter.
+- La **posición** de los jugadores debe tener mas de 1 carácter.
+
+### CONSULTAS
+
+- Consulta sencilla
+    - Mostrar el nombre de los futbolistas que son delantero centro.
+    - Mostrar los equipos de la ciudad de Sevilla.
+
+- Vistas.
+    - Crea una vista que muestre el nombre y la posición de los jugadores que nunca han metido un gol.
+
+
+- Subconsultas.
+    - Muestra el nombre de los presidentes de los equipos de Madrid.
+    - Muestra el nombre de los jugadores que han metido mas de un gol.
+
+- Combinaciones de tablas.
+    - Mostrar el nombre y apellido de cada presidente junto al nombre del equipo al que pertenece.
+
+- Inserción de registros. Consultas de datos anexados.
+    - Inserta un nuevo jugador con código 123, con nombre 'David Alaba', su fecha de nacimiento es el 24 de junio de 1992, juega como defensa central, tiene el dorsal con el número 4, y que juega en el mismo equipo que 'Vinicius Junior'.
+
+- Modificación de registros. Consultas de actualización.
+    - Actualiza el listado de goles, de forma que todos los goles anotados por Karim Benzema sean de remate.
+
+- Borrado de registros. Consultas de eliminación.
+    - Elimina todos los goles marcados en partidos lluviosos a partir del minuto 60.
+
+- Group by y having.
+    - Muestra el nombre y el año de nacimiento de los jugadores que hayan metido más de un gol de remate.
+    - Muestra todas las ciudades que tienen más de un equipo.    
+
+- Outer joins. Combinaciones externas.
+    - Muestra los equipos fundados a partir del año 1900 junto al número de jugadores registrados en la base de datos para cada uno de los equipos.
+
+- Consultas con operadores de conjuntos.
+    - Comprueba mediante una consulta si hay algún estado climatico en los partidos de la jornada 1 que hayan sido distintos a todos estados climáticos de los partidos de la jornada 2.
+
+- Subconsultas correlaccionadas.
+- Consulta que incluya varios tipos de los indicados anteriormente.
