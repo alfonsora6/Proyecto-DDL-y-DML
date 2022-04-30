@@ -78,8 +78,8 @@
 - Tabla Equipos: La **ciudad** debe empezar por mayúsculas.
 
 - La **posición** de los jugadores debe tener mas de 1 carácter.
-  
-  
+
+
 ## CONSULTAS
 
 - Consulta sencilla
@@ -88,7 +88,6 @@
 
 - Vistas.
     - Crea una vista que muestre el nombre y la posición de los jugadores que nunca han metido un gol.
-
 
 - Subconsultas.
     - Muestra el nombre de los presidentes de los equipos de Madrid.
@@ -115,6 +114,7 @@
 
 - Consultas con operadores de conjuntos.
     - Comprueba mediante una consulta si hay algún estado climatico en los partidos de la jornada 1 que hayan sido distintos a todos estados climáticos de los partidos de la jornada 2.
+    - Muestra el nombre de todos los jugadores y presidentes que empiecen por 'J'. 
 
 - Subconsultas correlaccionadas.
 - Consulta que incluya varios tipos de los indicados anteriormente.
