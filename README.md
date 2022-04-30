@@ -113,7 +113,7 @@
     - Muestra los equipos fundados a partir del año 1900 junto al número de jugadores registrados en la base de datos para cada uno de los equipos.
 
 - Consultas con operadores de conjuntos.
-    - Comprueba mediante una consulta si hay algún estado climatico en los partidos de la jornada 1 que hayan sido distintos a todos estados climáticos de los partidos de la jornada 2.
+    - Comprueba mediante una consulta si hay algún estado climatico en los partidos de la jornada 1 que hayan sido distintos a alguno de los estados climáticos de todos los partidos de la jornada 2.
     - Muestra el nombre de todos los jugadores y presidentes que empiecen por J. 
 
 - Subconsultas correlaccionadas.
