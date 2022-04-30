@@ -114,7 +114,7 @@
 
 - Consultas con operadores de conjuntos.
     - Comprueba mediante una consulta si hay algún estado climatico en los partidos de la jornada 1 que hayan sido distintos a todos estados climáticos de los partidos de la jornada 2.
-    - Muestra el nombre de todos los jugadores y presidentes que empiecen por 'J'. 
+    - Muestra el nombre de todos los jugadores y presidentes que empiecen por J. 
 
 - Subconsultas correlaccionadas.
 - Consulta que incluya varios tipos de los indicados anteriormente.
