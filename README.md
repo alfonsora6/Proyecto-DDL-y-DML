@@ -79,7 +79,7 @@
 
 - La **posición** de los jugadores debe tener mas de 1 carácter.
 
-### CONSULTAS
+## CONSULTAS
 
 - Consulta sencilla
     - Mostrar el nombre de los futbolistas que son delantero centro.
