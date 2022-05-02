@@ -58,6 +58,7 @@ WHERE CodJugador=(SELECT Codigo
 --7- Borrado de registros. Consultas de eliminación.
 
 -- Elimina todos los goles marcados en partidos lluviosos a partir del minuto 60.
+DELETE FROM Goles WHERE CodPartido IN (SELECT Codigo FROM Partidos WHERE Clima='Lluvioso') AND Minuto>60;
 
 
 
