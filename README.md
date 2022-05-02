@@ -90,7 +90,7 @@
     - Crea una vista que muestre el nombre y la posición de los jugadores que nunca han metido un gol.
 
 - Subconsultas.
-    - Muestra el nombre de los presidentes de los equipos de Madrid.
+    - Muestra el nombre y apellido de los presidentes de los equipos de Madrid.
     - Muestra el nombre de los jugadores que han metido mas de un gol.
 
 - Combinaciones de tablas.
