@@ -134,7 +134,7 @@ ALTER TABLE Partidos ADD CONSTRAINT ck_fechaencuentro CHECK(EXTRACT(YEAR FROM Fe
 ALTER TABLE Jugadores ADD CONSTRAINT ck_dorsal CHECK(Dorsal>=1 and Dorsal<=50);
 
 --8. Tabla Jugadores: Desactiva temporalmente la restricción del dorsal.
-
+--No he encontrado la forma de desactivar o activar una constraint en postgresql.
 ALTER TABLE Jugadores DROP CONSTRAINT ck_dorsal;
 
 --9. Tabla Jugadores: Activa la restricción del dorsal.
