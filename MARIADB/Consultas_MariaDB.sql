@@ -6,6 +6,7 @@ SELECT Nombre FROM Jugadores WHERE Posicion='DC';
 -- Mostrar los equipos de la ciudad de Sevilla.
 SELECT Nombre FROM Equipos WHERE Ciudad='Sevilla';
 
+
 --2- Vistas.
 
 -- Crea una vista que muestre el nombre y la posición de los jugadores que nunca han metido un gol.
@@ -17,6 +18,7 @@ FROM Jugadores
 WHERE Codigo NOT IN (SELECT CodJugador from Goles);
 
 SELECT * FROM Jugadores_sin_goles;
+
 
 --3- Subconsultas.
 
@@ -41,3 +43,11 @@ FROM Presidente
 WHERE NombreEquipo=(SELECT Nombre 
                     FROM Equipos 
                     WHERE aforo=(SELECT min(Aforo) FROM Equipos));
+
+
+--4- Combinaciones de tablas.
+
+-- Mostrar el nombre y apellido de cada presidente junto al nombre del equipo al que pertenece.
+SELECT CONCAT(p.Nombre," ",p.Apellido) AS "Nombre y apellido", e.Nombre 
+FROM Presidente p,Equipos e 
+WHERE p.NombreEquipo=e.Nombre;
