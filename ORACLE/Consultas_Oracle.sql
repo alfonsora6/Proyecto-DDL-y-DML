@@ -32,6 +32,13 @@ WHERE Codigo IN (SELECT CodJugador
                  GROUP BY CodJugador 
                  HAVING COUNT(codjugador)>1);
 
+--Muestra el Nombre, apellido y DNI (En mayúsculas) del presidente del equipo que cuente con un menor aforo.
+SELECT UPPER(Nombre||' '||Apellido) AS "Nombre y apellido",DNI 
+FROM Presidente 
+WHERE NombreEquipo=(SELECT Nombre 
+                    FROM equipos 
+                    WHERE aforo=(SELECT min(Aforo) FROM equipos));
+
 
 --4- Combinaciones de tablas.
 
@@ -108,6 +115,7 @@ SELECT nombre FROM presidente WHERE REGEXP_LIKE(nombre,'^J');
 
 
 --11- Subconsultas correlacionadas.
+
 
 
 --12- Consulta que incluya varios tipos de los indicados anteriormente.
