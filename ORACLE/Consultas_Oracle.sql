@@ -122,8 +122,8 @@ SELECT j.nombre,TO_CHAR(TO_DATE(EXTRACT(MONTH FROM j.fechanac),'MM'), 'Month') A
 
 --12- Consulta que incluya varios tipos de los indicados anteriormente.
 
---Muestra de todos los jugadores que sean centrocampistas su nombre, y el nombre del estadio de su club.
-SELECT j.Nombre,e.Estadio 
+--Muestra de todos los jugadores que sean centrocampistas su nombre, junto al nombre y estadio de su club.
+SELECT j.Nombre,e.Nombre as "NOMBRE DEL EQUIPO",e.Estadio 
 FROM Jugadores j 
 LEFT JOIN Equipos e ON e.Nombre=j.NombreEquipo 
 WHERE REGEXP_LIKE(j.posicion,'^MC');
