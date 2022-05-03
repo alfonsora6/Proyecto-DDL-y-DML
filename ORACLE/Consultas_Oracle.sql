@@ -102,9 +102,9 @@ SELECT clima FROM partidos WHERE jornada='Jornada 2';
 
 --Muestra el nombre de todos los jugadores y presidentes que empiecen por 'J'. 
 
-select nombre from jugadores where REGEXP_LIKE(nombre,'^J')
+SELECT nombre FROM jugadores WHERE REGEXP_LIKE(nombre,'^J')
 UNION
-select nombre from presidente where REGEXP_LIKE(nombre,'^J');
+SELECT nombre FROM presidente WHERE REGEXP_LIKE(nombre,'^J');
 
 
 --11- Subconsultas correlacionadas.
