@@ -62,3 +62,12 @@ FROM Equipos
 WHERE nombre=(SELECT NombreEquipo 
               FROM Jugadores 
               WHERE nombre='Vinicius Junior');
+
+
+--6- Modificación de registros. Consultas de actualización.
+
+-- Actualiza el listado de goles, de forma que todos los goles anotados por Karim Benzema sean de remate.
+UPDATE Goles SET Tipo = 'Remate'
+WHERE CodJugador=(SELECT Codigo 
+                  FROM Jugadores 
+                  WHERE Nombre='Karim Benzema');
