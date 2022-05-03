@@ -102,13 +102,11 @@ GROUP BY e.nombre ORDER BY e.nombre;
 --10- Consultas con operadores de conjuntos.
 
 --Comprueba mediante una consulta si hay algún estado climatico en los partidos de la jornada 1 que hayan sido distintos a todos estados climáticos de los partidos de la jornada 2.
-
 SELECT clima FROM partidos WHERE jornada='Jornada 1'
 MINUS
 SELECT clima FROM partidos WHERE jornada='Jornada 2';
 
 --Muestra el nombre de todos los jugadores y presidentes que empiecen por 'J'. 
-
 SELECT nombre FROM jugadores WHERE REGEXP_LIKE(nombre,'^J')
 UNION
 SELECT nombre FROM presidente WHERE REGEXP_LIKE(nombre,'^J');
@@ -121,7 +119,11 @@ SELECT j.nombre,TO_CHAR(TO_DATE(EXTRACT(MONTH FROM j.fechanac),'MM'), 'Month') A
                                                                                                        FROM goles g 
                                                                                                        WHERE j.codigo=g.CodJugador) as "Nº Goles" FROM Jugadores j;
 
+
 --12- Consulta que incluya varios tipos de los indicados anteriormente.
 
-
-
+--Muestra de todos los jugadores que sean centrocampistas su nombre, y el nombre del estadio de su club.
+SELECT j.Nombre,e.Estadio 
+FROM Jugadores j 
+LEFT JOIN Equipos e ON e.Nombre=j.NombreEquipo 
+WHERE REGEXP_LIKE(j.posicion,'^MC');
