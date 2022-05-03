@@ -115,3 +115,11 @@ SELECT clima FROM Partidos WHERE jornada='Jornada 1' AND clima NOT IN (SELECT cl
 SELECT nombre FROM Jugadores WHERE nombre REGEXP('^J')
 UNION
 SELECT nombre FROM Presidente WHERE nombre REGEXP('^J');
+
+
+--11- Subconsultas correlacionadas.
+
+--Muestra por cada jugador, su nombre, mes de nacimiento (En formato texto) y número de goles que ha anotado.
+SELECT j.nombre,MONTHNAME(j.fechanac) AS "Mes de nacimiento",(SELECT COUNT(ngol) 
+                                                              FROM Goles g 
+                                                              WHERE j.codigo=g.CodJugador) as "Nº Goles" FROM Jugadores j;
