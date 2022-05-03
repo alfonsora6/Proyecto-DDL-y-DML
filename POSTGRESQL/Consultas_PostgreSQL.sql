@@ -115,3 +115,20 @@ SELECT clima FROM Partidos WHERE jornada='Jornada 1' AND clima NOT IN (SELECT cl
 SELECT nombre FROM Jugadores WHERE nombre ~('^J')
 UNION
 SELECT nombre FROM Presidente WHERE nombre ~('^J');
+
+
+--11- Subconsultas correlacionadas.
+
+--Muestra por cada jugador, su nombre, mes de nacimiento (En formato texto) y número de goles que ha anotado.
+SELECT j.nombre,TO_CHAR(j.fechanac, 'Month') AS "Mes de nacimiento",(SELECT COUNT(ngol) 
+                                                                     FROM goles g 
+                                                                    WHERE j.codigo=g.CodJugador) as "Nº Goles" FROM Jugadores j;
+
+
+--12- Consulta que incluya varios tipos de los indicados anteriormente.
+
+--Muestra de todos los jugadores que sean centrocampistas su nombre, junto al nombre y estadio de su club.
+SELECT j.Nombre,e.Nombre as "NOMBRE DEL EQUIPO",e.Estadio 
+FROM Jugadores j 
+LEFT JOIN Equipos e ON e.Nombre=j.NombreEquipo 
+WHERE j.posicion ~('^MC');
