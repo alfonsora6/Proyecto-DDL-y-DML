@@ -93,3 +93,13 @@ HAVING COUNT(g.ngol)>1;
 
 --Muestra todas las ciudades que tienen más de un equipo.
 SELECT ciudad FROM Equipos GROUP BY ciudad HAVING COUNT(nombre)>1;
+
+
+--9- Outer joins. Combinaciones externas.
+
+--Muestra los equipos fundados a partir del año 1900 junto al número de jugadores registrados en la base de datos por cada uno de los equipos ordenados por nombre del equipo ascendentemente.
+SELECT e.nombre as "Nombre Equipo",count(j.codigo) as "Nº jugadores registrados" 
+FROM Equipos e LEFT JOIN Jugadores j 
+ON j.NombreEquipo=e.Nombre 
+WHERE EXTRACT(YEAR FROM Fundacion)>1900 
+GROUP BY e.nombre ORDER BY e.nombre;
