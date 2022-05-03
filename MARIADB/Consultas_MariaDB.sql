@@ -80,3 +80,16 @@ DELETE FROM Goles
        WHERE CodPartido IN (SELECT Codigo 
                             FROM Partidos 
                             WHERE Clima='Lluvioso') AND Minuto>60;
+
+
+--8- Group by y having.
+
+--Muestra el nombre y el año de nacimiento de los jugadores que hayan metido más de un gol de remate.
+SELECT j.nombre,EXTRACT(YEAR FROM j.fechanac) as "Año de nacimiento",count(g.ngol) as Goles 
+FROM Jugadores j, Goles g 
+WHERE j.codigo=g.codjugador AND g.tipo='Remate' 
+GROUP BY j.nombre,j.fechanac 
+HAVING COUNT(g.ngol)>1;
+
+--Muestra todas las ciudades que tienen más de un equipo.
+SELECT ciudad FROM Equipos GROUP BY ciudad HAVING COUNT(nombre)>1;
