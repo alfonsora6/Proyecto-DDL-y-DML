@@ -17,3 +17,9 @@ FROM Jugadores
 WHERE Codigo NOT IN (SELECT CodJugador from Goles);
 
 SELECT * FROM Jugadores_sin_goles;
+
+--3- Subconsultas.
+
+-- Muestra el nombre y apellido de los presidentes de los equipos de Madrid.
+SELECT CONCAT(Nombre," ",Apellido) as "Nombre y apellido" FROM Presidente WHERE NombreEq
+uipo IN (SELECT Nombre FROM Equipos WHERE Ciudad='Madrid');
