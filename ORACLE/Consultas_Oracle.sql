@@ -118,8 +118,8 @@ SELECT nombre FROM presidente WHERE REGEXP_LIKE(nombre,'^J');
 
 --Muestra por cada jugador, su nombre, mes de nacimiento (En formato texto) y número de goles que ha anotado.
 SELECT j.nombre,TO_CHAR(TO_DATE(EXTRACT(MONTH FROM j.fechanac),'MM'), 'Month') AS "Mes de nacimiento",(SELECT COUNT(ngol) 
-                                                                       FROM goles g 
-                                                                       WHERE j.codigo=g.CodJugador) as "Nº Goles" FROM Jugadores j;
+                                                                                                       FROM goles g 
+                                                                                                       WHERE j.codigo=g.CodJugador) as "Nº Goles" FROM Jugadores j;
 
 --12- Consulta que incluya varios tipos de los indicados anteriormente.
 
