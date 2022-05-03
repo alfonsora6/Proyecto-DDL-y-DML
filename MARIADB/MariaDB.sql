@@ -205,8 +205,3 @@ INSERT INTO Goles VALUES(11,'BBB3',116,81,'Gol de Dembele','Remate');
 INSERT INTO Goles VALUES(12,'BBB3',116,17,'Gol de Dembele','Remate');
 
 COMMIT;
-
-
-
-
-
