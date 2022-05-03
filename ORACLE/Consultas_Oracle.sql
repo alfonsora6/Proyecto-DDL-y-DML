@@ -58,52 +58,24 @@ WHERE CodJugador=(SELECT Codigo
 --7- Borrado de registros. Consultas de eliminación.
 
 -- Elimina todos los goles marcados en partidos lluviosos a partir del minuto 60.
-DELETE FROM Goles WHERE CodPartido IN (SELECT Codigo FROM Partidos WHERE Clima='Lluvioso') AND Minuto>60;
+DELETE FROM Goles 
+       WHERE CodPartido IN (SELECT Codigo 
+                            FROM Partidos 
+                            WHERE Clima='Lluvioso') AND Minuto>60;
+
+--8- Group by y having.
+
+--Muestra el nombre y el año de nacimiento de los jugadores que hayan metido más de un gol de remate.
+SELECT j.nombre,EXTRACT(YEAR FROM j.fechanac) as "Año de nacimiento",count(g.ngol) as Goles 
+FROM jugadores j, goles g 
+WHERE j.codigo=g.codjugador AND g.tipo='Remate' 
+GROUP BY j.nombre,j.fechanac 
+HAVING COUNT(g.ngol)>1;
 
 
+--Muestra todas las ciudades que tienen más de un equipo.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8- Group by y having.
-
-Muestra el nombre y el año de nacimiento de los jugadores que hayan metido más de un gol de remate.
-
-select j.nombre,EXTRACT(YEAR FROM j.fechanac) as "Año de nacimiento",count(g.ngol) as Goles from jugadores j, goles g where j.codigo=g.codjugador and g.tipo='Remate' group by j.nombre,j.fechanac having count(g.ngol)>1;
-
-
-Muestra todas las ciudades que tienen más de un equipo.
-
-select ciudad from equipos group by ciudad having count(nombre)>1;
+SELECT ciudad from equipos group by ciudad having count(nombre)>1;
 
 
 
