@@ -117,4 +117,7 @@
     - Muestra el nombre de todos los jugadores y presidentes que empiecen por J. 
 
 - Subconsultas correlaccionadas.
+    - Muestra por cada jugador, su nombre, mes de nacimiento (En formato texto) y número de goles que ha anotado.
+
 - Consulta que incluya varios tipos de los indicados anteriormente.
+    - Muestra de todos los jugadores que sean centrocampistas su nombre, junto al nombre y estadio de su club.
