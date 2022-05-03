@@ -103,3 +103,15 @@ FROM Equipos e LEFT JOIN Jugadores j
 ON j.NombreEquipo=e.Nombre 
 WHERE EXTRACT(YEAR FROM Fundacion)>1900 
 GROUP BY e.nombre ORDER BY e.nombre;
+
+
+--10- Consultas con operadores de conjuntos.
+
+--Comprueba mediante una consulta si hay algún estado climatico en los partidos de la jornada 1 que hayan sido distintos a todos estados climáticos de los partidos de la jornada 2.
+--La función MINUS no funciona en MariaDB, así que he probado con esta alternativa:
+SELECT clima FROM Partidos WHERE jornada='Jornada 1' AND clima NOT IN (SELECT clima FROM Partidos WHERE jornada='Jornada 2');
+
+--Muestra el nombre de todos los jugadores y presidentes que empiecen por 'J'. 
+SELECT nombre FROM Jugadores WHERE nombre REGEXP('^J')
+UNION
+SELECT nombre FROM Presidente WHERE nombre REGEXP('^J');
