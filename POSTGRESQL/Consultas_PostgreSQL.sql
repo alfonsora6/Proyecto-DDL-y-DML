@@ -93,3 +93,25 @@ HAVING COUNT(g.ngol)>1;
 
 --Muestra todas las ciudades que tienen más de un equipo.
 SELECT ciudad FROM Equipos GROUP BY ciudad HAVING COUNT(nombre)>1;
+
+
+--9- Outer joins. Combinaciones externas.
+
+--Muestra los equipos fundados a partir del año 1900 junto al número de jugadores registrados en la base de datos por cada uno de los equipos ordenados por nombre del equipo ascendentemente.
+SELECT e.nombre as "Nombre Equipo",count(j.codigo) as "Nº jugadores registrados" 
+FROM Equipos e LEFT JOIN Jugadores j 
+ON j.NombreEquipo=e.Nombre 
+WHERE EXTRACT(YEAR FROM Fundacion)>1900 
+GROUP BY e.nombre ORDER BY e.nombre;
+
+
+--10- Consultas con operadores de conjuntos.
+
+--Comprueba mediante una consulta si hay algún estado climatico en los partidos de la jornada 1 que hayan sido distintos a todos estados climáticos de los partidos de la jornada 2.
+--La función MINUS no funciona en MariaDB, así que he probado con esta alternativa:
+SELECT clima FROM Partidos WHERE jornada='Jornada 1' AND clima NOT IN (SELECT clima FROM Partidos WHERE jornada='Jornada 2');
+
+--Muestra el nombre de todos los jugadores y presidentes que empiecen por 'J'. 
+SELECT nombre FROM Jugadores WHERE nombre ~('^J')
+UNION
+SELECT nombre FROM Presidente WHERE nombre ~('^J');
