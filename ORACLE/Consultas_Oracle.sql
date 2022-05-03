@@ -82,37 +82,32 @@ HAVING COUNT(g.ngol)>1;
 SELECT ciudad FROM equipos GROUP BY ciudad HAVING COUNT(nombre)>1;
 
 
+--9- Outer joins. Combinaciones externas.
+
+--Muestra los equipos fundados a partir del año 1900 junto al número de jugadores registrados en la base de datos por cada uno de los equipos ordenados por nombre del equipo ascendentemente.
+SELECT e.nombre as "Nombre Equipo",count(j.codigo) as "Nº jugadores registrados" 
+FROM Equipos e LEFT JOIN Jugadores j 
+ON j.NombreEquipo=e.Nombre 
+WHERE EXTRACT(YEAR FROM Fundacion)>1900 
+GROUP BY e.nombre ORDER BY e.nombre;
 
 
-----------------------------------------------------------------------------------
-9- Outer joins. Combinaciones externas.
+--10- Consultas con operadores de conjuntos.
 
-Muestra los equipos fundados a partir del año 1900 junto al número de jugadores registrados en la base de datos por cada uno de los equipos.
+--Comprueba mediante una consulta si hay algún estado climatico en los partidos de la jornada 1 que hayan sido distintos a todos estados climáticos de los partidos de la jornada 2.
 
-----------------------------------------------------------------------------------
-10- Consultas con operadores de conjuntos.
+SELECT clima FROM partidos WHERE jornada='Jornada 1'
+MINUS
+SELECT clima FROM partidos WHERE jornada='Jornada 2';
 
-Comprueba mediante una consulta si hay algún estado climatico en los partidos de la jornada 1 que hayan sido distintos a todos estados climáticos de los partidos de la jornada 2.
-
-SQL> Select clima from partidos where jornada='Jornada 1'
-  2  MINUS
-  3  Select clima from partidos where jornada='Jornada 2';
-
-CLIMA
----------
-Lluvioso
-
-
-Muestra el nombre de todos los jugadores y presidentes que empiecen por 'J'. 
+--Muestra el nombre de todos los jugadores y presidentes que empiecen por 'J'. 
 
 select nombre from jugadores where REGEXP_LIKE(nombre,'^J')
 UNION
 select nombre from presidente where REGEXP_LIKE(nombre,'^J');
 
-----------------------------------------------------------------------------------
 
-11- Subconsultas correlacionadas.
-
+--11- Subconsultas correlacionadas.
 
 
-12- Consulta que incluya varios tipos de los indicados anteriormente.
+--12- Consulta que incluya varios tipos de los indicados anteriormente.
