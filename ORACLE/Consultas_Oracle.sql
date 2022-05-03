@@ -6,6 +6,7 @@ SELECT Nombre FROM Jugadores WHERE Posicion='DC';
 -- Mostrar los equipos de la ciudad de Sevilla.
 SELECT Nombre FROM Equipos WHERE Ciudad='Sevilla';
 
+
 --2- Vistas.
 
 -- Crea una vista que muestre el nombre y la posición de los jugadores que nunca han metido un gol.
@@ -16,6 +17,7 @@ AS
  WHERE Codigo NOT IN (SELECT CodJugador from Goles));
 
 SELECT * FROM Jugadores_sin_goles;
+
 
 --3- Subconsultas.
 
@@ -30,12 +32,14 @@ WHERE Codigo IN (SELECT CodJugador
                  GROUP BY CodJugador 
                  HAVING COUNT(codjugador)>1);
 
+
 --4- Combinaciones de tablas.
 
 -- Mostrar el nombre y apellido de cada presidente junto al nombre del equipo al que pertenece.
 SELECT p.Nombre||' '||p.Apellido AS "Nombre y apellido", e.Nombre 
 FROM Presidente p,Equipos e 
 WHERE p.NombreEquipo=e.Nombre;
+
 
 --5- Inserción de registros. Consultas de datos anexados.
 
@@ -47,6 +51,7 @@ WHERE nombre=(SELECT NombreEquipo
               FROM jugadores 
               WHERE nombre='Vinicius Junior');
 
+
 --6- Modificación de registros. Consultas de actualización.
 
 -- Actualiza el listado de goles, de forma que todos los goles anotados por Karim Benzema sean de remate.
@@ -54,6 +59,7 @@ UPDATE Goles SET Tipo = 'Remate'
 WHERE CodJugador=(SELECT Codigo 
                   FROM Jugadores 
                   WHERE Nombre='Karim Benzema');
+
 
 --7- Borrado de registros. Consultas de eliminación.
 
@@ -72,10 +78,8 @@ WHERE j.codigo=g.codjugador AND g.tipo='Remate'
 GROUP BY j.nombre,j.fechanac 
 HAVING COUNT(g.ngol)>1;
 
-
 --Muestra todas las ciudades que tienen más de un equipo.
-
-SELECT ciudad from equipos group by ciudad having count(nombre)>1;
+SELECT ciudad FROM equipos GROUP BY ciudad HAVING COUNT(nombre)>1;
 
 
 
