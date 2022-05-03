@@ -123,3 +123,12 @@ SELECT nombre FROM Presidente WHERE nombre REGEXP('^J');
 SELECT j.nombre,MONTHNAME(j.fechanac) AS "Mes de nacimiento",(SELECT COUNT(ngol) 
                                                               FROM Goles g 
                                                               WHERE j.codigo=g.CodJugador) as "Nº Goles" FROM Jugadores j;
+
+
+--12- Consulta que incluya varios tipos de los indicados anteriormente.
+
+--Muestra de todos los jugadores que sean centrocampistas su nombre, junto al nombre y estadio de su club.
+SELECT j.Nombre,e.Nombre as "NOMBRE DEL EQUIPO",e.Estadio 
+FROM Jugadores j 
+LEFT JOIN Equipos e ON e.Nombre=j.NombreEquipo 
+WHERE j.posicion REGEXP('^MC');
