@@ -43,3 +43,11 @@ FROM Presidente
 WHERE NombreEquipo=(SELECT Nombre 
                     FROM Equipos 
                     WHERE aforo=(SELECT min(Aforo) FROM Equipos));
+
+
+--4- Combinaciones de tablas.
+
+-- Mostrar el nombre y apellido de cada presidente junto al nombre del equipo al que pertenece.
+SELECT CONCAT(p.Nombre,' ',p.Apellido) AS "Nombre y apellido", e.Nombre 
+FROM Presidente p,Equipos e 
+WHERE p.NombreEquipo=e.Nombre;
